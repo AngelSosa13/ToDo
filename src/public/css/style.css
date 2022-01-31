@@ -14,7 +14,7 @@ body {
 }
 
 .grid {
-    display: grid;
+    display: grid !important;
     grid-template-columns: repeat(5, 1fr);
     gap : var(--gap, 1.5rem);
 }
@@ -31,7 +31,7 @@ body {
 }
 
 .primary-navigation {
-    list-style: none;
+    list-style: none !important;
     padding: 0;
     margin: 0;
     background-color: hsl(0 0% 30% / 0.7);
@@ -75,12 +75,18 @@ body {
 }
 
 .primary-navigation a {
+    text-decoration: none !important;
+    color: #000;
+    font-weight: 700;
+}
+
+.primary-navigation a:hover {
     text-decoration: none;
     color: #000;
 }
 
 .primary-navigation a > [aria-hidden="true"] {
-    font-weight: 700;
+    font-weight: 800;
     margin-inline-end: 0.700rem;
 }
     
