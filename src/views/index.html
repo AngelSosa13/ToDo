@@ -32,27 +32,29 @@
               <input type="text" class="form-control" name="newInput" placeholder="New task">
             </div>
             <div class="form-group">
-              <button class="btn btn-success btn-lg" type="submit" href="#" role="button">Add</button>
+              <button class="btn btn-success btn-lg" type="submit" role="button">Add</button>
             </div>
           </form> 
-          <div class="form-group">
-            <input type="checkbox" class="checkbox all" id="c1" name="cc" />
-          </div>
-          <div class="form-group">
-            <a class="btn btn-danger btn-lg" href="#" role="button">Delete Selected</a>
-          </div>
-          <div class="form-group">
-            <a class="btn btn-danger btn-lg" href="#" role="button">Delete All</a>
-          </div>
+          <form action="/dSelected" method="post" class="selected">
+            <div class="form-group">
+              <button class="btn btn-danger btn-lg" type="submit" role="button">Delete Selected</button>
+            </div>
+          </form>
+          <form action="/dAll" method="post" class="deleteAll">
+            <div class="form-group">
+              <button class="btn btn-danger btn-lg" type="submit" role="button">Delete All</button>
+            </div>
+          </form>
         </div>
         <ul class="list-group grid custom-grid scrollbar">
           <div class="jumbotron padding-1-2 list-group-item">
-            <input type="checkbox" class="checkbox" id="c1" name="cc" />
+            <input type="checkbox" class="checkbox all" id="c1" name="done"/>
+            <label for="done">Done</label>
             <p class="lead custom-lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio rerum, cum atque voluptates sint vitae eius. Sit quisquam officiis sed beatae eum saepe, eos fugiat veritatis! Libero ut eum deserunt?</p>
             <hr class="my-4">
-            <p class="lead">
+            <div class="form-group">
               <a class="btn btn-danger btn-lg" href="#" role="button">Delete</a>
-            </p>
+            </div>
           </div>
         </ul>
     </div>

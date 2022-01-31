@@ -16,7 +16,7 @@ const show = async () => {
     //console.log(results);
 }
 
-//RUTA PARA POST
+//RUTA PARA POST SAVE
 router.post("/", (req, res) => {
     var add = req.body.newInput;
     const NewTask = new Task({
@@ -27,9 +27,11 @@ router.post("/", (req, res) => {
     res.redirect('/');
 });
 
-function Remove() {
-    
-}
-
+//RUTA PARA POST DELETE ALL
+router.post("/dAll", (req, res) => {
+    Task.collection.remove();
+    console.log('ok:1');
+    res.redirect('/');
+});
 
 module.exports = router;
