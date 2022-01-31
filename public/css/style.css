@@ -1,0 +1,207 @@
+body {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-image: url("https://images.unsplash.com/photo-1642630955374-c37580439941?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.flex {
+    display: flex;
+    gap : var(--gap, 1.5rem);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap : var(--gap, 1.5rem);
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+}
+
+.menu-header {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.primary-navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: hsl(0 0% 30% / 0.7);
+}
+
+.main-content {
+    padding: 0;
+    margin: 4em 2em;
+    min-height: 780px;
+    max-height: 780px;
+    min-width: 95%;
+    background-color: hsl(0 0% 30% / 0.7);
+}
+
+.custom-lead{
+    max-height: 150px;
+    overflow-y: scroll;
+    margin-top: 1em;
+}
+
+.custom-grid {
+    grid-row: 2/2;
+    overflow-y: scroll;
+    max-height: 700px;
+}
+
+.first-row {
+    grid-row: 1/1;
+}
+        
+@supports (backdrop-filter: blur(1rem)){
+    .primary-navigation {
+        background-color: hsl(0 0% 100% / 0.2);
+        backdrop-filter: blur(0.2rem);
+    }
+
+    .main-content {
+        background-color: hsl(0 0% 100% / 0.2);
+        backdrop-filter: blur(0.2rem);
+    }
+}
+
+.primary-navigation a {
+    text-decoration: none;
+    color: #000;
+}
+
+.primary-navigation a > [aria-hidden="true"] {
+    font-weight: 700;
+    margin-inline-end: 0.700rem;
+}
+    
+.logo { 
+    margin : 1rem;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.FS-25{
+font-size: 2.5rem;
+}
+
+.padding-1-2 {
+    padding: 1rem 2rem;
+    max-height: 370px;
+    min-height: 370px;
+    border-radius: 0.8rem;
+}
+
+.scrollbar::-webkit-scrollbar {
+    background-color:transparent;
+    width:16px
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+.scrollbar::-webkit-scrollbar-track:hover {
+    background-color:transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color:#babac0;
+    border-radius:16px;
+}
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color:#a0a0a5;
+}
+
+.scrollbar::-webkit-scrollbar-button {display:none}
+
+.checkbox {
+    height: 12px;
+    width: 12px;  
+}
+
+.checkbox:checked {
+    content: '';
+    background: blue;
+    width: 20px;
+    height: 20px;
+}
+
+.all {
+    height: 20px;
+    width: 20px;
+}
+
+#new-item {
+    height: 60%;
+    width: 33%;
+}
+
+#new-item:focus {
+    outline: none !important;
+    border:1px solid rgba(70, 70, 202, 0.842);
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.options {
+    margin: 1em 1em 0 1em;  
+}
+
+@media (max-width: 42em){
+    .primary-navigation {
+        --gap: 2em;
+        z-index: 1000;
+        position: fixed;
+        inset: 0 0 0 25%;
+        flex-direction: column;
+        padding: min(30vh, 8rem) 2em;
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+    
+    .primary-navigation[data-visible="true"] {
+        transform: translate(0%);
+    }
+    
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        background-color: transparent;
+        background-image: url("https://img.icons8.com/ios-filled/50/000000/menu--v1.png");
+        background-repeat: no-repeat;
+        border: 0;
+        aspect-ratio: 1/1;
+        width: 2.3rem;
+        top: 2rem;
+        right: 2rem;
+        z-index: 9999;
+    }
+
+    .menu-toggle[aria-expanded="true"]{
+        background-image: url("https://img.icons8.com/ios-glyphs/30/000000/delete-sign.png")
+    }
+}
+
+@media (min-width: 42em) and (max-width: 75em){
+    .primary-navigation a > [aria-hidden="true"] {
+        display: none;
+    }
+}
+
+@media (min-width: 42em){
+    .primary-navigation {
+        --gap: clamp(2rem, 5vw, 3.5rem);
+        padding-block: 2rem;
+        padding-inline: clamp(3rem, 10vw, 5rem);
+    }
+}
