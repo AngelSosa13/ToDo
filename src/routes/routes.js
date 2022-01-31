@@ -5,16 +5,18 @@ const router = express.Router();
 
 router.use(BodyParser.urlencoded({extended : true}));
 
-//RUTA INICIAL QUE DEVUELVE EL INDEX.HTML
-router.get("/", (req, res) => {
-    res.render('index.html');
-    show();
-});
-
 const show = async () => {
     const results = await Task.find();
     //console.log(results);
 }
+
+var taskArray = ['hnciubsidubc sbdli b', 'kuihdciousdbnciubsdbc', 'osdjbcisudbcisbdcislbdclisbdcvs', 'soduhcsidcbs'];
+
+//RUTA INICIAL QUE DEVUELVE EL INDEX.HTML
+router.get("/", (req, res) => {
+    res.render('index.html', {arr:taskArray});
+    console.log(taskArray);
+});
 
 //RUTA PARA POST SAVE
 router.post("/", (req, res) => {

@@ -47,15 +47,17 @@
           </form>
         </div>
         <ul class="list-group grid custom-grid scrollbar">
-          <div class="jumbotron padding-1-2 list-group-item">
-            <input type="checkbox" class="checkbox all" id="c1" name="done"/>
-            <label for="done">Done</label>
-            <p class="lead custom-lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio rerum, cum atque voluptates sint vitae eius. Sit quisquam officiis sed beatae eum saepe, eos fugiat veritatis! Libero ut eum deserunt?</p>
-            <hr class="my-4">
-            <div class="form-group">
-              <a class="btn btn-danger btn-lg" href="#" role="button">Delete</a>
+          <% for(var e = 0; e < arr.length; e++) { %>
+            <div class="jumbotron padding-1-2 list-group-item">
+              <input type="checkbox" class="checkbox all" id="c1" name="done"/>
+              <label for="done">Done</label>
+              <p class="lead custom-lead"><%= arr[e] %></p>
+              <hr class="my-4">
+              <div class="form-group">
+                <a class="btn btn-danger btn-lg" href="#" role="button">Delete</a>
+              </div>
             </div>
-          </div>
+          <% } %>
         </ul>
     </div>
     <%- include('partials/scripts.html') %>
