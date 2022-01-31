@@ -17,3 +17,6 @@ Para correr el proyecto en producción se ejecuta el comando 'npm run start';
             <li class="navs"><a href="#"><span aria-hidden="true">05</span>Careers</a></li>
           </ul>
         </nav>
+# Antes de inicializar el proyecto, se debe de ejecutar el comando 'npm install';
+# Para correr el proyecto en dev se ejecuta el comando 'npm run dev';
+# Para correr el proyecto en producción se ejecuta el comando 'npm run start';
