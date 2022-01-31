@@ -27,12 +27,14 @@
     </header>
     <div class="main-content main-grid">
         <div class="options flex">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="New task">
-          </div>
-          <div class="form-group">
-            <a class="btn btn-success btn-lg" href="#" role="button">Add</a>
-          </div>
+          <form action="/" method="post" class="adder flex">
+            <div class="form-group">
+              <input type="text" class="form-control" name="newInput" placeholder="New task">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-success btn-lg" type="submit" href="#" role="button">Add</button>
+            </div>
+          </form> 
           <div class="form-group">
             <input type="checkbox" class="checkbox all" id="c1" name="cc" />
           </div>
