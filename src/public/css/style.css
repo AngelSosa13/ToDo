@@ -106,7 +106,7 @@ font-size: 2.5rem;
     padding: 1rem 2rem;
     max-height: 370px;
     min-height: 370px;
-    border-radius: 0.8rem;
+    border-radius: 0.8rem !important;
 }
 
 .scrollbar::-webkit-scrollbar {
