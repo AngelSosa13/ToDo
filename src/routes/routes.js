@@ -5,17 +5,17 @@ const router = express.Router();
 
 router.use(BodyParser.urlencoded({extended : true}));
 
+var taskArray = [''];
+
 const show = async () => {
     const results = await Task.find();
-    //console.log(results);
+    return taskArray = results;
 }
 
-var taskArray = ['hnciubsidubc sbdli b', 'kuihdciousdbnciubsdbc', 'osdjbcisudbcisbdcislbdclisbdcvs', 'soduhcsidcbs'];
-
 //RUTA INICIAL QUE DEVUELVE EL INDEX.HTML
-router.get("/", (req, res) => {
-    res.render('index.html', {arr:taskArray});
-    console.log(taskArray);
+router.get("/", async (req, res) => {
+    const taskes = await Task.find({}, {taskBody:1,_id:0});
+    res.render('index.html', {arr:taskes});
 });
 
 //RUTA PARA POST SAVE
@@ -29,7 +29,7 @@ router.post("/", (req, res) => {
     res.redirect('/');
 });
 
-//RUTA PARA POST DELETE ALL
+//RUTA PARA PUT DELETE ALL
 router.post("/dAll", (req, res) => {
     Task.collection.remove();
     console.log('ok:1');
