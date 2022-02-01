@@ -2,7 +2,7 @@
   "name": "ToDo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "main": "src/views/index.html",
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js"
